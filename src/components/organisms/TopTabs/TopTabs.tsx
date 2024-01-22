@@ -1,5 +1,6 @@
 import { t } from "i18next";
-import React, { useRef, useEffect, useState, memo } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import * as Animatable from "react-native-animatable";
 
 import styles from "./TopTabs.styles";
 import {
@@ -12,6 +13,7 @@ import {
   Text,
 } from "react-native";
 import { colors } from "@constants/styles";
+import Animated from "react-native-reanimated";
 
 type ITap = {
   id: number;
@@ -83,16 +85,22 @@ const FilterScrollTabs = ({
                   styles.tab,
                 ]}
               >
-                <Text
-                  style={[
-                    styles.name,
-                    {
-                      color: activeTab === tab.id ? colors.primary : "black",
-                    },
-                  ]}
-                >
-                  {tab.name}
-                </Text>
+                {activeTab === tab.id ? (
+                  <Animatable.Text
+                    animation="swing"
+                    iterationCount={2}
+                    style={[
+                      styles.name,
+                      {
+                        color: activeTab === tab.id ? colors.primary : "black",
+                      },
+                    ]}
+                  >
+                    {tab.name}
+                  </Animatable.Text>
+                ) : (
+                  <Text style={[styles.name]}>{tab.name}</Text>
+                )}
               </View>
             </Pressable>
           );
