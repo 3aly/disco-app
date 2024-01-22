@@ -8,7 +8,7 @@ export default StyleSheet.create({
     ...layouts.row,
     ...layouts.justifyBetween,
     ...layouts.yCentered,
-    ...layouts.py.xl,
+    ...layouts.my.md,
     ...layouts.px.md,
   },
 

@@ -53,7 +53,7 @@ const FilterScrollTabs = ({
     <View>
       <FlatList
         ref={flatListRef}
-        contentContainerStyle={{ width: "100%", backgroundColor: "red" }}
+        contentContainerStyle={styles.listContainer}
         onScrollToIndexFailed={(err) => {
           console.log(err);
         }}
@@ -75,7 +75,7 @@ const FilterScrollTabs = ({
                   viewPosition: Platform.OS === "ios" ? 1 : 0.5,
                 });
               }}
-              style={[styles.container, { width: tabWidth }]}
+              style={[styles.container]}
             >
               <View
                 style={[
@@ -84,10 +84,12 @@ const FilterScrollTabs = ({
                 ]}
               >
                 <Text
-                  style={{
-                    color: activeTab === tab.id ? colors.primary : "black",
-                    textAlign: "center",
-                  }}
+                  style={[
+                    styles.name,
+                    {
+                      color: activeTab === tab.id ? colors.primary : "black",
+                    },
+                  ]}
                 >
                   {tab.name}
                 </Text>
