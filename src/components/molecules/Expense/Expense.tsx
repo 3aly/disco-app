@@ -7,8 +7,8 @@ const Expense = ({
   title,
   percentage: percentage,
 }: {
-  icon: string;
-  title: number;
+  icon?: string;
+  title: string;
   percentage: number;
 }) => {
   return (
@@ -17,7 +17,7 @@ const Expense = ({
         <Text style={styles.icon}>{icon}</Text>
         <Text style={styles.title}>{title}</Text>
       </View>
-      <Text style={styles.percentage}>{percentage}</Text>
+      <Text style={styles.percentage}>{percentage}%</Text>
     </View>
   );
 };

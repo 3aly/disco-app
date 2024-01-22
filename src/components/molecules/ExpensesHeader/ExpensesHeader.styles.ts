@@ -8,15 +8,15 @@ export default StyleSheet.create({
     ...layouts.row,
     ...layouts.justifyBetween,
     ...layouts.yCentered,
-    ...layouts.py.xl,
-    ...layouts.my.xl,
-    ...layouts.px.md,
+    ...layouts.py.md,
+    ...layouts.px.xxl,
   },
+
   title: {
-    fontSize: px(32),
+    fontSize: px(12),
     fontWeight: "bold",
   },
-  circle: {
+  icon: {
     borderWidth: 1,
     height: px(48),
     width: px(48),
@@ -25,5 +25,7 @@ export default StyleSheet.create({
     ...layouts.allCentered,
     borderColor: "black",
   },
-  number: { fontSize: px(20) },
+  totalExpenses: {
+    fontSize: px(32),
+  },
 });

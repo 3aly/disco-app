@@ -8,19 +8,19 @@ const Transaction = ({
   date,
   invoice,
 }: {
-  icon: ImageProps;
+  icon?: ImageProps;
   title: string;
   date: string;
   invoice: number;
 }) => {
   return (
     <View style={styles.container}>
-      <Image source={icon} />
-      <View style={styles.data}>
-        <Text style={styles.icon}>{title}</Text>
-        <Text style={styles.title}>{date}</Text>
+      {/* <Image source={icon} /> */}
+      <View style={styles.date}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.date}>{date}</Text>
       </View>
-      <Text style={styles.percentage}>{invoice}</Text>
+      <Text style={styles.percentage}>+ {invoice}$</Text>
     </View>
   );
 };

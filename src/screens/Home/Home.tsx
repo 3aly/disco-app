@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React, { useState } from "react";
 import styles from "./Home.styles";
-import { TopTabs } from "@components/organisms";
+import { TopTabs, TotalExpenses, Transactions } from "@components/organisms";
 import { Header } from "@components/molecules";
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <Header />
+      <Header title="Budget" number={5} />
       <TopTabs
         onPressFn={handlePress}
         initialTab={0}
@@ -34,7 +34,12 @@ const Home = () => {
           },
         ]}
       />
-      {selectedTab === 0 && <Text>first tab</Text>}
+      {selectedTab === 0 && (
+        <>
+          <TotalExpenses />
+          <Transactions />
+        </>
+      )}
       {selectedTab === 1 && <Text>second tab</Text>}
       {selectedTab === 2 && <Text>third tab</Text>}
     </View>
