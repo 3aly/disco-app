@@ -14,7 +14,7 @@ export const spacing = {
   bigxl: px(500),
 };
 
-const layouts = {
+export const layouts = {
   // **** Flexbox alignment ****
   row: { flexDirection: "row" } as ViewStyle,
   rowReversed: { flexDirection: "row-reverse" } as ViewStyle,
@@ -253,5 +253,10 @@ const layouts = {
   // text decoration
   underlined: { textDecorationLine: "underline" } as ViewStyle,
 };
-
-export default layouts;
+export const colors = {
+  primary: "#0052CC",
+  secondary: "#33C2E3",
+  green: "#59BA47",
+  red: "#E5233D",
+  yellow: "#FFC828",
+};

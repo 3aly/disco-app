@@ -1,3 +1,4 @@
 export { spacing } from "./layouts";
 
-export { default as layouts } from "./layouts";
+export { layouts } from "./layouts";
+export { colors } from "./layouts";
